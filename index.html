@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>دعوة زفاف | Wedding Invitation</title>
+  <meta name="description" content="دعوة لحضور حفل زفافنا — ٢٧ ديسمبر ٢٠٢٦ — قاعة وادي القمر" />
+  <meta name="theme-color" content="#0e1522" />
+
+  <!-- Link preview (WhatsApp / Facebook). After hosting, replace YOUR-SITE-URL with the real link -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="دعوة زفاف 💍 Wedding Invitation" />
+  <meta property="og:description" content="الأحد ٢٧ ديسمبر ٢٠٢٦ — قاعة وادي القمر" />
+  <meta property="og:image" content="https://YOUR-SITE-URL/images/couple.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";</script>
+</head>
+<body class="locked">
+
+  <!-- Reusable gold branch ornament (inspired by the venue's leaf motif) -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop class="g1" offset="0%" stop-color="#f3dfa6"/>
+        <stop class="g2" offset="50%" stop-color="#c9a35b"/>
+        <stop class="g3" offset="100%" stop-color="#8f6b2e"/>
+      </linearGradient>
+      <symbol id="branch" viewBox="0 0 120 300">
+        <path d="M60 300 C 58 220, 64 140, 70 0" stroke="url(#goldGrad)" stroke-width="2" fill="none"/>
+        <g fill="url(#goldGrad)">
+          <path d="M61 250 C 30 245, 12 225, 8 200 C 30 205, 52 222, 61 250Z"/>
+          <path d="M62 215 C 92 208, 110 186, 112 160 C 90 168, 70 188, 62 215Z"/>
+          <path d="M63 175 C 34 170, 18 150, 14 126 C 36 131, 56 148, 63 175Z"/>
+          <path d="M65 135 C 92 128, 106 108, 108 86 C 88 93, 71 112, 65 135Z"/>
+          <path d="M66 98 C 42 92, 30 74, 28 54 C 46 60, 62 76, 66 98Z"/>
+          <path d="M68 62 C 88 55, 98 40, 98 22 C 82 30, 70 44, 68 62Z"/>
+        </g>
+        <g class="berries" fill="#e8d5a3">
+          <circle cx="20" cy="190" r="3"/><circle cx="104" cy="150" r="3"/>
+          <circle cx="24" cy="118" r="2.5"/><circle cx="100" cy="78" r="2.5"/>
+          <circle cx="36" cy="48" r="2"/><circle cx="92" cy="16" r="2"/>
+        </g>
+      </symbol>
+      <symbol id="divider" viewBox="0 0 300 30">
+        <path d="M0 15 H120" stroke="#c9a35b" stroke-width="1"/>
+        <path d="M180 15 H300" stroke="#c9a35b" stroke-width="1"/>
+        <path d="M150 3 L162 15 L150 27 L138 15Z" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+        <circle cx="150" cy="15" r="3" fill="url(#goldGrad)"/>
+        <circle cx="128" cy="15" r="2" fill="url(#goldGrad)"/>
+        <circle cx="172" cy="15" r="2" fill="url(#goldGrad)"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <canvas id="sparkles" aria-hidden="true"></canvas>
+
+  <!-- Floating controls -->
+  <div class="controls">
+    <button id="themeBtn" class="ctrl-btn" aria-label="Toggle light / dark"></button>
+    <button id="langBtn" class="ctrl-btn" aria-label="Change language">EN</button>
+    <button id="musicBtn" class="ctrl-btn hidden" aria-label="Toggle music">♫</button>
+  </div>
+
+  <!-- ============ INTRO: INVITATION CARD ============ -->
+  <section id="intro" role="button" tabindex="0" aria-label="Open invitation">
+    <div class="panel panel-left"></div>
+    <div class="panel panel-right"></div>
+
+    <div class="card">
+      <div class="card-border">
+        <svg class="card-branch tl"><use href="#branch"/></svg>
+        <svg class="card-branch tr"><use href="#branch"/></svg>
+
+        <p class="bismillah" data-i18n="bismillah"></p>
+        <p class="card-kicker" data-i18n="cardKicker"></p>
+
+        <div class="monogram">
+          <svg class="moon" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="2 4"/>
+            <path d="M62 18 A34 34 0 1 0 62 82 A28 28 0 1 1 62 18Z" fill="url(#goldGrad)" opacity=".9"/>
+          </svg>
+          <span class="mono-letters" id="monoLetters"></span>
+        </div>
+
+        <h1 class="card-names">
+          <span data-name="groom"></span>
+          <span class="amp">&amp;</span>
+          <span data-name="bride"></span>
+        </h1>
+
+        <p class="card-invite" data-i18n="cardInvite"></p>
+        <svg class="divider"><use href="#divider"/></svg>
+        <p class="card-date" data-date="weddingShort"></p>
+        <p class="card-venue" data-i18n="venueName"></p>
+
+        <p class="tap-hint"><span class="tap-dot"></span><span data-i18n="tapToOpen"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MAIN WEBSITE ============ -->
+  <main id="site" aria-hidden="true">
+
+    <!-- HERO -->
+    <header class="hero">
+      <svg class="hero-branch left"><use href="#branch"/></svg>
+      <svg class="hero-branch right"><use href="#branch"/></svg>
+
+      <p class="bismillah reveal" data-i18n="bismillah"></p>
+      <p class="hero-kicker reveal" data-i18n="heroKicker"></p>
+
+      <div class="arch reveal">
+        <div class="arch-inner">
+          <img id="couplePhoto" src="images/couple.webp" alt="" />
+          <div class="arch-fallback" id="archFallback">
+            <span id="archLetters"></span>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="hero-names reveal">
+        <span data-name="groom"></span>
+        <span class="amp">&amp;</span>
+        <span data-name="bride"></span>
+      </h2>
+      <svg class="divider reveal"><use href="#divider"/></svg>
+      <p class="hero-date reveal" data-date="weddingLong"></p>
+
+      <a href="#countdown" class="scroll-down" aria-label="Scroll"><span></span></a>
+    </header>
+
+    <!-- VERSE -->
+    <section class="verse section">
+      <p class="verse-text reveal" data-i18n="verse"></p>
+      <p class="verse-ref reveal" data-i18n="verseRef"></p>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section id="countdown" class="section">
+      <h3 class="section-title reveal" data-i18n="countdownTitle"></h3>
+      <svg class="divider reveal"><use href="#divider"/></svg>
+      <div class="countdown reveal" id="countdownBox">
+        <div class="cd-item"><span class="cd-num" id="cdDays">0</span><span class="cd-label" data-i18n="days"></span></div>
+        <div class="cd-item"><span class="cd-num" id="cdHours">0</span><span class="cd-label" data-i18n="hours"></span></div>
+        <div class="cd-item"><span class="cd-num" id="cdMins">0</span><span class="cd-label" data-i18n="minutes"></span></div>
+        <div class="cd-item"><span class="cd-num" id="cdSecs">0</span><span class="cd-label" data-i18n="seconds"></span></div>
+      </div>
+      <p class="cd-done hidden" id="cdDone" data-i18n="married"></p>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="section">
+      <h3 class="section-title reveal" data-i18n="eventsTitle"></h3>
+      <svg class="divider reveal"><use href="#divider"/></svg>
+
+      <div class="events">
+        <article class="event-card reveal">
+          <div class="event-icon">
+            <svg viewBox="0 0 64 64"><path d="M14 10h30l8 8v36H14z" fill="none" stroke="url(#goldGrad)" stroke-width="2"/><path d="M44 10v8h8M22 28h20M22 36h20M22 44h12" stroke="url(#goldGrad)" stroke-width="2" fill="none"/></svg>
+          </div>
+          <h4 data-i18n="katbTitle"></h4>
+          <ul class="event-info">
+            <li><span class="ei-label" data-i18n="dateLabel"></span><span data-date="katbLong"></span></li>
+            <li><span class="ei-label" data-i18n="timeLabel"></span><span id="katbTime"></span></li>
+            <li><span class="ei-label" data-i18n="placeLabel"></span><span id="katbPlace"></span></li>
+          </ul>
+        </article>
+
+        <article class="event-card featured reveal">
+          <div class="event-icon">
+            <svg viewBox="0 0 64 64"><circle cx="24" cy="38" r="14" fill="none" stroke="url(#goldGrad)" stroke-width="2"/><circle cx="40" cy="38" r="14" fill="none" stroke="url(#goldGrad)" stroke-width="2"/><path d="M28 12l4-6 4 6-4 6z" fill="url(#goldGrad)"/></svg>
+          </div>
+          <h4 data-i18n="weddingTitle"></h4>
+          <ul class="event-info">
+            <li><span class="ei-label" data-i18n="dateLabel"></span><span data-date="weddingLong"></span></li>
+            <li><span class="ei-label" data-i18n="timeLabel"></span><span data-date="weddingTime"></span></li>
+            <li><span class="ei-label" data-i18n="placeLabel"></span><span data-i18n="venueName"></span></li>
+          </ul>
+          <div class="cal-buttons">
+            <a class="btn btn-outline" id="gcalBtn" target="_blank" rel="noopener" data-i18n="addGoogle"></a>
+            <button class="btn btn-outline" id="icsBtn" data-i18n="addApple"></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section id="venue" class="section">
+      <h3 class="section-title reveal" data-i18n="venueTitle"></h3>
+      <svg class="divider reveal"><use href="#divider"/></svg>
+
+      <div class="venue-banner reveal">
+        <img src="images/venue.jpg" alt="Wady El Amar Venue" />
+      </div>
+      <h4 class="venue-name reveal" data-i18n="venueName"></h4>
+      <p class="venue-address reveal" data-i18n="venueAddress"></p>
+
+      <div class="map-wrap reveal">
+        <iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map"></iframe>
+      </div>
+      <a class="btn btn-gold reveal" id="mapBtn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        <span data-i18n="openMap"></span>
+      </a>
+    </section>
+
+    <!-- RSVP (shown only if a WhatsApp number is set in script.js) -->
+    <section id="rsvp" class="section hidden">
+      <h3 class="section-title reveal" data-i18n="rsvpTitle"></h3>
+      <svg class="divider reveal"><use href="#divider"/></svg>
+      <p class="rsvp-sub reveal" data-i18n="rsvpSub"></p>
+      <form class="rsvp-form reveal" id="rsvpForm">
+        <input type="text" id="rsvpName" required data-i18n-ph="rsvpName" />
+        <div class="rsvp-choice">
+          <label><input type="radio" name="attend" value="yes" checked /><span data-i18n="rsvpYes"></span></label>
+          <label><input type="radio" name="attend" value="no" /><span data-i18n="rsvpNo"></span></label>
+        </div>
+        <input type="number" id="rsvpCount" min="1" max="20" value="1" data-i18n-ph="rsvpCount" />
+        <textarea id="rsvpMsg" rows="3" data-i18n-ph="rsvpMsg"></textarea>
+        <button type="submit" class="btn btn-gold" data-i18n="rsvpSend"></button>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer section">
+      <svg class="footer-branch"><use href="#branch"/></svg>
+      <p class="footer-text reveal" data-i18n="footerText"></p>
+      <h2 class="footer-names reveal">
+        <span data-name="groom"></span> <span class="amp">&amp;</span> <span data-name="bride"></span>
+      </h2>
+      <p class="footer-date reveal" data-date="weddingShort"></p>
+      <p class="hashtag reveal" id="hashtag"></p>
+      <button class="btn btn-outline reveal" id="shareBtn" data-i18n="share"></button>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <audio id="bgMusic" loop preload="none"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
