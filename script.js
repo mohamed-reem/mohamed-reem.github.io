@@ -331,7 +331,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Language
   // Preload both languages' fonts so switching never flashes unstyled text
   ['400 1em "Amiri"', '700 1em "Amiri"', '400 1em "Aref Ruqaa"', '400 1em "Great Vibes"',
-   '400 1em "Cormorant Garamond"', 'italic 400 1em "Cormorant Garamond"', '600 1em "Cormorant Garamond"']
+   '400 1em "Cormorant Garamond"', 'italic 400 1em "Cormorant Garamond"', '600 1em "Cormorant Garamond"',
+   '500 1em "El Messiri"', '600 1em "El Messiri"', '500 1em "Playfair Display"', '600 1em "Playfair Display"']
     .forEach((f) => document.fonts?.load(f).catch(() => {}));
 
   applyTheme(theme());
