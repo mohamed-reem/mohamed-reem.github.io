@@ -12,10 +12,10 @@ const CONFIG = {
     mapEmbedQuery: "Wady El Amar Venue, Al Mahalla Al Kobra Tanta Road, Egypt",
   },
 
-  katb: {
-    date: "2026-12-18",                              // ⚠️ you wrote 18/12/2027 — please confirm
-    time: null,                                      // e.g. "2026-12-18T19:00:00+02:00"
-    place: null,                                     // e.g. { ar: "مسجد ...", en: "... Mosque" }
+  katb: {                                           // الإشهار والوليمة
+    date: "2026-12-25",
+    time: { ar: "بعد صلاة الجمعة", en: "After Friday prayer" },
+    place: { ar: "مسجد علي بن أبي طالب - قرية شبرابابل", en: "Ali Ibn Abi Talib Mosque - Shubra Babel" },
   },
 
   whatsapp: "",      // e.g. "201001234567" (country code, no +). Leave empty to hide RSVP section
@@ -39,7 +39,7 @@ const T = {
     days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية",
     married: "تم الزفاف بحمد الله ♡ شكراً لمشاركتكم فرحتنا",
     eventsTitle: "تفاصيل المناسبات",
-    katbTitle: "كتب الكتاب",
+    katbTitle: "الإشهار والوليمة",
     weddingTitle: "حفل الزفاف",
     dateLabel: "التاريخ", timeLabel: "الموعد", placeLabel: "المكان",
     tba: "سيتم الإعلان قريباً",
@@ -48,6 +48,7 @@ const T = {
     venueTitle: "مكان الحفل",
     venueName: "وادي القمر - قاعة تمر حنة",
     venueAddress: "طريق المحلة الكبرى - طنطا",
+    transport: "المواصلات متوفرة من أمام كوبري الملهود بشبرابابل",
     openMap: "افتح الموقع على خرائط Google",
     rsvpTitle: "تأكيد الحضور",
     rsvpSub: "يسعدنا تأكيد حضوركم قبل ٢٠ ديسمبر",
@@ -70,7 +71,7 @@ const T = {
     days: "Days", hours: "Hours", minutes: "Minutes", seconds: "Seconds",
     married: "Happily married ♡ Thank you for celebrating with us",
     eventsTitle: "Celebrations",
-    katbTitle: "Katb El Ketab",
+    katbTitle: "Eshhar & Walima",
     weddingTitle: "Wedding Party",
     dateLabel: "Date", timeLabel: "Time", placeLabel: "Venue",
     tba: "To be announced",
@@ -79,6 +80,7 @@ const T = {
     venueTitle: "The Venue",
     venueName: "Wady El Amar Venue - Tamr Henna Hall",
     venueAddress: "Al Mahalla Al Kobra - Tanta Road",
+    transport: "Transportation available from in front of El Malhoud Bridge, Shubra Babel",
     openMap: "Open in Google Maps",
     rsvpTitle: "RSVP",
     rsvpSub: "Kindly confirm your attendance before December 20",
@@ -135,7 +137,7 @@ function render() {
   $$("[data-date]").forEach((el) => (el.textContent = dates[el.dataset.date]));
 
   const tba = `<span class="tba">${t.tba}</span>`;
-  $("#katbTime").innerHTML = CONFIG.katb.time ? timeOf(CONFIG.katb.time) : tba;
+  $("#katbTime").innerHTML = CONFIG.katb.time ? (typeof CONFIG.katb.time === "string" ? timeOf(CONFIG.katb.time) : CONFIG.katb.time[lang]) : tba;
   $("#katbPlace").innerHTML = CONFIG.katb.place ? CONFIG.katb.place[lang] : tba;
 
   const initials = `${CONFIG.groom.en[0]}&${CONFIG.bride.en[0]}`;

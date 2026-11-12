@@ -298,7 +298,13 @@ html[dir="rtl"] .countdown { flex-direction: row-reverse; }
   font-weight: 600; font-size: clamp(1.5rem, 5.5vw, 2rem); line-height: 1.5; margin-top: 1.6rem;
   background: var(--gold-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.venue-address { color: var(--text); font-size: 1.1rem; margin-bottom: 1.4rem; }
+.venue-address { color: var(--text); font-size: 1.1rem; margin-bottom: .8rem; }
+.transport {
+  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 1.6rem;
+  padding: 8px 18px; border: 1px solid rgba(201,163,91,.45); border-radius: 30px;
+  color: var(--text); font-size: 1rem; line-height: 1.6;
+}
+.transport svg { color: var(--gold); flex: none; }
 .map-wrap {
   border-radius: 14px; overflow: hidden; border: 1px solid rgba(201,163,91,.45);
   height: 320px; margin-bottom: 1.6rem;
