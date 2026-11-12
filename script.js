@@ -4,6 +4,12 @@
 const CONFIG = {
   groom: { ar: "محمد", en: "Mohamed" },
   bride: { ar: "ريم", en: "Reem" },
+  groomTitle: { ar: "المهندس", en: "Eng." },
+  brideTitle: { ar: "الدكتورة", en: "Dr." },
+  groomLabel: { ar: "نجل الأول", en: "" },
+  brideLabel: { ar: "كريمة الثاني", en: "" },
+  groomFather: { title: { ar: "الحاج /", en: "Al-Hajj" }, name: { ar: "محمد السيد اللقانى", en: "Mohamed El-Sayed El-Lakany" } },
+  brideFather: { title: { ar: "الأستاذ /", en: "Mr." }, name: { ar: "أحمد حسن فرج", en: "Ahmed Hassan Farag" } },
 
   wedding: {
     start: "2026-12-27T18:00:00+02:00",             // 27/12/2026 — 6 PM Cairo time
@@ -32,7 +38,7 @@ const T = {
     cardKicker: "دعوة زفاف",
     cardInvite: "يتشرفان بدعوتكم لمشاركتهما فرحة العمر",
     tapToOpen: "اضغط لفتح الدعوة",
-    heroKicker: "بكل الحب والسعادة ندعوكم لحضور حفل زفاف",
+    heroKicker: "يتشرفان بدعوة سيادتكم لحضور حفل زفاف",
     verse: "﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾",
     verseRef: "سورة الروم — الآية ٢١",
     countdownTitle: "العد التنازلي ليومنا المميز",
@@ -64,7 +70,7 @@ const T = {
     cardKicker: "Wedding Invitation",
     cardInvite: "request the pleasure of your company to celebrate their wedding",
     tapToOpen: "Tap to open",
-    heroKicker: "Together with their families, invite you to celebrate the wedding of",
+    heroKicker: "request the honour of your presence at the wedding of their children",
     verse: "“And among His signs is that He created for you spouses from among yourselves so that you may find tranquility in them, and He placed between you affection and mercy.”",
     verseRef: "Surah Ar-Rum — 30:21",
     countdownTitle: "Counting Down to Our Day",
@@ -127,6 +133,11 @@ function render() {
   $$("[data-i18n]").forEach((el) => (el.textContent = t[el.dataset.i18n] ?? ""));
   $$("[data-i18n-ph]").forEach((el) => (el.placeholder = t[el.dataset.i18nPh] ?? ""));
   $$("[data-name]").forEach((el) => (el.textContent = CONFIG[el.dataset.name][lang]));
+  $$("[data-cfg]").forEach((el) => {
+    const v = el.dataset.cfg.split(".").reduce((o, k) => o?.[k], CONFIG)?.[lang] ?? "";
+    el.textContent = v;
+    el.hidden = !v;
+  });
 
   const dates = {
     weddingShort: shortDate(CONFIG.wedding.start),

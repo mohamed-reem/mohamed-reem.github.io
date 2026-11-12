@@ -112,6 +112,11 @@
       <svg class="hero-branch right"><use href="#branch"/></svg>
 
       <p class="bismillah reveal" data-i18n="bismillah"></p>
+      <div class="hero-fathers reveal">
+        <div class="hf"><span class="hf-t" data-cfg="groomFather.title"></span><span class="hf-n" data-cfg="groomFather.name"></span></div>
+        <span class="hf-amp">&amp;</span>
+        <div class="hf"><span class="hf-t" data-cfg="brideFather.title"></span><span class="hf-n" data-cfg="brideFather.name"></span></div>
+      </div>
       <p class="hero-kicker reveal" data-i18n="heroKicker"></p>
 
       <div class="arch reveal">
@@ -124,9 +129,9 @@
       </div>
 
       <h2 class="hero-names reveal">
-        <span data-name="groom"></span>
+        <span class="nm"><em data-cfg="groomLabel"></em><small data-cfg="groomTitle"></small><span data-name="groom"></span></span>
         <span class="amp">&amp;</span>
-        <span data-name="bride"></span>
+        <span class="nm"><em data-cfg="brideLabel"></em><small data-cfg="brideTitle"></small><span data-name="bride"></span></span>
       </h2>
       <svg class="divider reveal"><use href="#divider"/></svg>
       <p class="hero-date reveal" data-date="weddingLong"></p>
