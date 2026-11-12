@@ -390,9 +390,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Share
   $("#shareBtn").addEventListener("click", async () => {
-    const data = { title: document.title, text: `${T[lang].cardKicker} — ${coupleNames()}`, url: location.href };
+    const cleanUrl = location.origin + location.pathname;   // never share ?lang=… so everyone starts in Arabic
+    const data = { title: document.title, text: `${T[lang].cardKicker} — ${coupleNames()}`, url: cleanUrl };
     if (navigator.share) { try { await navigator.share(data); } catch {} return; }
-    await navigator.clipboard?.writeText(location.href);
+    await navigator.clipboard?.writeText(cleanUrl);
     const toast = $("#toast");
     toast.textContent = T[lang].copied;
     toast.classList.add("show");
