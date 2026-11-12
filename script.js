@@ -30,9 +30,9 @@ const T = {
   ar: {
     bismillah: "بسم الله الرحمن الرحيم",
     cardKicker: "دعوة زفاف",
-    cardInvite: "يتشرفان بدعوتكم لمشاركتهما فرحة العمر",
+    cardInvite: "يسعدنا أن ندعوكم لمشاركتنا فرحة العمر",
     tapToOpen: "اضغط لفتح الدعوة",
-    heroKicker: "بكل الحب والسعادة ندعوكم لحضور حفل زفاف",
+    heroKicker: "بكل الحب والسعادة ندعوكم لحضور حفل زفافنا",
     verse: "﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾",
     verseRef: "سورة الروم — الآية ٢١",
     countdownTitle: "العد التنازلي ليومنا المميز",
@@ -62,9 +62,9 @@ const T = {
   en: {
     bismillah: "In the name of Allah, the Most Gracious, the Most Merciful",
     cardKicker: "Wedding Invitation",
-    cardInvite: "request the pleasure of your company to celebrate their wedding",
+    cardInvite: "joyfully invite you to share the happiest day of our lives",
     tapToOpen: "Tap to open",
-    heroKicker: "Together with their families, invite you to celebrate the wedding of",
+    heroKicker: "With joyful hearts, we invite you to celebrate our wedding",
     verse: "“And among His signs is that He created for you spouses from among yourselves so that you may find tranquility in them, and He placed between you affection and mercy.”",
     verseRef: "Surah Ar-Rum — 30:21",
     countdownTitle: "Counting Down to Our Day",
