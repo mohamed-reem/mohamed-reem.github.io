@@ -200,14 +200,7 @@ html[lang="en"] .card-kicker, html[lang="en"] .hero-kicker { text-transform: upp
 .hero-branch { position: absolute; width: 130px; height: 325px; opacity: .55; top: 6%; }
 .hero-branch.left { left: -20px; transform: rotate(-18deg); }
 .hero-branch.right { right: -20px; transform: scaleX(-1) rotate(-18deg); }
-.hero-kicker { color: var(--text); margin: .2rem 0 1.8rem; font-size: 1.15rem; max-width: 360px; }
-html[lang="en"] .hero-kicker { color: var(--muted); text-transform: none; letter-spacing: .5px; font-size: 1.15rem; font-style: italic; }
-.hero-fathers { display: flex; flex-direction: column; align-items: center; gap: 0; margin: .8rem 0 .4rem; max-width: 340px; }
-.hf { display: flex; flex-direction: column; align-items: center; line-height: 1.5; }
-.hf-t { color: var(--muted); font-size: .95rem; }
-.hf-n { font-family: "El Messiri", "Amiri", serif; font-weight: 600; font-size: clamp(1.05rem, 4.2vw, 1.3rem); color: var(--gold-light); }
-html[lang="en"] .hf-n { font-family: "Playfair Display", serif; }
-.hf-amp { font-family: "Great Vibes", cursive; color: var(--gold); font-size: 1.5rem; line-height: 1.1; }
+.hero-kicker { color: var(--muted); letter-spacing: 2px; margin-bottom: 1.6rem; font-size: 1.05rem; max-width: 330px; }
 
 .arch {
   width: min(320px, 78vw); aspect-ratio: 952 / 1269;
@@ -230,14 +223,7 @@ html[lang="en"] .hf-n { font-family: "Playfair Display", serif; }
 }
 .arch-fallback.show { display: grid; }
 
-.hero-names { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 10vw, 4.4rem); line-height: 1.2; margin-top: 2rem;
-  display: flex; align-items: flex-end; justify-content: center; gap: .3em; }
-.hero-names .nm { display: inline-flex; flex-direction: column; align-items: center; }
-.hero-names .nm em, .hero-names .nm small { -webkit-text-fill-color: currentColor; line-height: 1.5; }
-.hero-names .nm em { font-style: normal; font-family: "Amiri", serif; font-size: 1rem; color: var(--muted); }
-.hero-names .nm small { font-family: "El Messiri", serif; font-weight: 600; font-size: 1.05rem; color: var(--gold-light); margin-bottom: .1em; }
-html[lang="en"] .hero-names .nm small { font-family: "Playfair Display", serif; }
-.hero-names .amp { align-self: center; padding-top: 1em; }
+.hero-names { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 10vw, 4.4rem); line-height: 1.2; margin-top: 2rem; }
 .hero-date { font-size: 1.25rem; color: var(--gold-light); letter-spacing: 1px; }
 
 .scroll-down {
