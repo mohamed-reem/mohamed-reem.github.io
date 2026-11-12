@@ -14,7 +14,7 @@ const CONFIG = {
 
   katb: {                                           // الإشهار والوليمة
     date: "2026-12-25",
-    time: { ar: "بعد صلاة الجمعة", en: "After Friday prayer" },
+    time: { ar: "بعد العصر", en: "After Asr prayer" },
     place: { ar: "مسجد علي بن أبي طالب - قرية شبرابابل", en: "Ali Ibn Abi Talib Mosque - Shubra Babel" },
   },
 
